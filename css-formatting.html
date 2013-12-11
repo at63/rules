@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CSS代码格式规则 - @路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li>
+                        <a href="index.html">主页</a>
+                    </li>
+                    <li>
+                        <a href="page-style.html">样式规则</a>
+                    </li>
+                    <li>
+                        <a href="page-formatting.html">排版规则</a>
+                    </li>
+                    <li>
+                        <a href="page-meta.html">页面信息规则</a>
+                    </li>
+                    <li>
+                        <a href="html-style.html">HTML代码风格规则</a>
+                    </li>
+                    <li>
+                        <a href="html-formatting.html">HTML代码格式规则</a>
+                    </li>
+                    <li>
+                        <a href="css-style.html">CSS代码风格规则</a>
+                    </li>
+                    <li class="active">
+                        <a href="css-formatting.html">CSS代码格式规则</a>
+                    </li>
+                    <li>
+                        <a href="css-meta.html">CSS信息规则</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<header class="jumbotron subhead" id="overview">
+    <div class="container">
+        <h1>CSS代码格式规则</h1>
+        <p class="lead">代码缩进及大小写规范</p>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="span3 bs-docs-sidebar">
+            <ul class="nav nav-list bs-docs-sidenav">
+                <li><a href="#declaration-order"><i class="icon-chevron-right"></i> 声明顺序</a></li>
+                <li><a href="#content-indentation"><i class="icon-chevron-right"></i> 代码块内容缩进</a></li>
+                <li><a href="#statement-end"><i class="icon-chevron-right"></i> 声明完结</a></li>
+                <li><a href="#attribute-end"><i class="icon-chevron-right"></i> 属性名完结</a></li>
+                <li><a href="#selector"><i class="icon-chevron-right"></i> 选择器和声明分行</a></li>
+                <li><a href="#rules-branch"><i class="icon-chevron-right"></i> 规则分行</a></li>
+            </ul>
+        </div>
+        <div class="span9">
+            <!-- Protocol
+            ================================================== -->
+            <section id="declaration-order">
+                <div class="page-header">
+                    <h1>声明顺序</h1>
+                </div>
+                <h2>依字母顺序进行声明</h2>
+                <p>都按字母顺序声明，很容易记住和维护。忽略浏览器的特定前缀排序，但多浏览器特定的某个CSS属性前缀应相对保持排序（例如-moz前缀在-webkit前面）。</p>
+<pre class="prettyprint linenums">
+background: fuchsia;
+border: 1px solid;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+color: black;
+text-align: center;
+text-indent: 2em;
+</pre>
+
+<pre class="prettyprint linenums">
+.example {
+  color: blue;
+}
+</pre>
+            </section>
+            <section id="content-indentation">
+                <div class="page-header">
+                    <h1>代码块内容缩进</h1>
+                </div>
+                <h2>缩进所有代码块（“{}”之间）内容。</h2>
+
+                <p>缩进所有代码块的内容，它能够提高层次结构的清晰度。</p>
+<pre class="prettyprint linenums">
+@media screen, projection {
+  html {
+    background: #fff;
+    color: #444;
+  }
+}
+</pre>
+            </section>
+            <section id="statement-end">
+                <div class="page-header">
+                    <h1>声明完结</h1>
+                </div>
+
+                <h2>所有声明都要用“;”结尾。</h2>
+
+                <p>考虑到一致性和拓展性，请在每个声明尾部都加上分号。</p>
+<pre class="prettyprint linenums">
+/* 不推荐 */
+.test {
+  display: block;
+  height: 100px
+}
+</pre>
+<pre class="prettyprint linenums">
+/* 推荐 */
+.test {
+  display: block;
+  height: 100px;
+}
+</pre>
+            </section>
+            <section id="attribute-end">
+                <div class="page-header">
+                    <h1>属性名完结</h1>
+                </div>
+
+                <h2>在属性名冒号结束后加一个空字符。</h2>
+
+                <p>出于一致性的原因，在属性名和值之间加一个空格（可不是属性名和冒号之间噢）。</p>
+<pre class="prettyprint linenums">
+/* 不推荐 */
+h3 {
+  font-weight:bold;
+}
+</pre>
+<pre class="prettyprint linenums">
+/* 推荐 */
+h3 {
+  font-weight: bold;
+}
+</pre>
+            </section>
+            <section id="selector">
+                <div class="page-header">
+                    <h1>选择器和声明分行</h1>
+                </div>
+
+                <h2>将选择器和声明隔行。</h2>
+
+                <p>每个选择器和声明都要独立新行。</p>
+<pre class="prettyprint linenums">
+/* 不推荐 */
+a:focus, a:active {
+  position: relative; top: 1px;
+}
+</pre>
+<pre class="prettyprint linenums">
+/* 推荐 */
+h1,
+h2,
+h3 {
+  font-weight: normal;
+  line-height: 1.2;
+}
+</pre>
+            </section>
+            <section id="rules-branch">
+                <div class="page-header">
+                    <h1>规则分行</h1>
+                </div>
+
+                <h2>每个规则独立一行。</h2>
+
+                <p>两个规则之间隔行。</p>
+<pre class="prettyprint linenums">
+html {
+  background: #fff;
+}
+
+body {
+  margin: auto;
+  width: 50%;
+}
+</pre>
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <p>Kuyae <a href="http://at63.com/" target="_blank">at63.com</a></p>
+    </div>
+</footer>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap-transition.js"></script>
+<script src="assets/js/bootstrap-alert.js"></script>
+<script src="assets/js/bootstrap-modal.js"></script>
+<script src="assets/js/bootstrap-dropdown.js"></script>
+<script src="assets/js/bootstrap-scrollspy.js"></script>
+<script src="assets/js/bootstrap-tab.js"></script>
+<script src="assets/js/bootstrap-tooltip.js"></script>
+<script src="assets/js/bootstrap-popover.js"></script>
+<script src="assets/js/bootstrap-button.js"></script>
+<script src="assets/js/bootstrap-collapse.js"></script>
+<script src="assets/js/bootstrap-carousel.js"></script>
+<script src="assets/js/bootstrap-typeahead.js"></script>
+<script src="assets/js/bootstrap-affix.js"></script>
+<script src="assets/js/holder/holder.js"></script>
+<script src="assets/js/google-code-prettify/prettify.js"></script>
+<script src="assets/js/application.js"></script>
+</body>
+</html>

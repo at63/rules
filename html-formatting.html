@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>HTML代码格式规则 - @路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li>
+                        <a href="./index.html">主页</a>
+                    </li>
+                    <li>
+                        <a href="./page-style.html">样式规则</a>
+                    </li>
+                    <li>
+                        <a href="./page-formatting.html">排版规则</a>
+                    </li>
+                    <li>
+                        <a href="./page-meta.html">页面信息规则</a>
+                    </li>
+                    <li>
+                        <a href="./html-style.html">HTML代码风格规则</a>
+                    </li>
+                    <li class="active">
+                        <a href="./html-formatting.html">HTML代码格式规则</a>
+                    </li>
+                    <li>
+                        <a href="./css-style.html">CSS代码风格规则</a>
+                    </li>
+                    <li>
+                        <a href="./css-formatting.html">CSS代码格式规则</a>
+                    </li>
+                    <li>
+                        <a href="./css-meta.html">CSS信息规则</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<header class="jumbotron subhead" id="overview">
+    <div class="container">
+        <h1>HTML代码格式规则</h1>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="span3 bs-docs-sidebar">
+            <ul class="nav nav-list bs-docs-sidenav">
+                <li><a href="#format-type"><i class="icon-chevron-right"></i> 格式</a></li>
+            </ul>
+        </div>
+        <div class="span9">
+            <section id="document-type">
+                <div class="page-header">
+                    <h1>格式</h1>
+                </div>
+
+                <h2>每个块元素、列表元素或表格元素都独占一行，每个子元素都相对于父元素进行缩进。</h2>
+
+                <p>独立元素的样式（as CSS allows elements to assume a different role per display property), 将块元素、列表元素或表格元素都放在新行。
+
+                    另外，需要缩进块元素、列表元素或表格元素的子元素。
+
+                    （如果出现了列表项左右空文本节点问题，可以试着将所有的 li 元素都放在一行。 A linter is encouraged to throw a warning instead of an error.)</p>
+                <pre class="prettyprint linenums">
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Space&lt;/em&gt;, the final frontier.&lt;/p&gt;
+&lt;/blockquote&gt;
+</pre>
+ <pre class="prettyprint linenums">
+&lt;ul&gt;
+  &lt;li&gt;Moe
+  &lt;li&gt;Larry
+  &lt;li&gt;Curly
+&lt;/ul&gt;
+</pre>
+ <pre class="prettyprint linenums">
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;Income
+      &lt;th scope="col"&gt;Taxes
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$ 5.00
+      &lt;td&gt;$ 4.50
+&lt;/table&gt;
+</pre>
+            </section>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <p>Kuyae <a href="http://at63.com/" target="_blank">at63.com</a></p>
+    </div>
+</footer>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap-transition.js"></script>
+<script src="assets/js/bootstrap-alert.js"></script>
+<script src="assets/js/bootstrap-modal.js"></script>
+<script src="assets/js/bootstrap-dropdown.js"></script>
+<script src="assets/js/bootstrap-scrollspy.js"></script>
+<script src="assets/js/bootstrap-tab.js"></script>
+<script src="assets/js/bootstrap-tooltip.js"></script>
+<script src="assets/js/bootstrap-popover.js"></script>
+<script src="assets/js/bootstrap-button.js"></script>
+<script src="assets/js/bootstrap-collapse.js"></script>
+<script src="assets/js/bootstrap-carousel.js"></script>
+<script src="assets/js/bootstrap-typeahead.js"></script>
+<script src="assets/js/bootstrap-affix.js"></script>
+<script src="assets/js/holder/holder.js"></script>
+<script src="assets/js/google-code-prettify/prettify.js"></script>
+<script src="assets/js/application.js"></script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CSS代码风格规则 - @路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li>
+                        <a href="./index.html">主页</a>
+                    </li>
+                    <li>
+                        <a href="./page-style.html">样式规则</a>
+                    </li>
+                    <li>
+                        <a href="./page-formatting.html">排版规则</a>
+                    </li>
+                    <li>
+                        <a href="./page-meta.html">页面信息规则</a>
+                    </li>
+                    <li>
+                        <a href="./html-style.html">HTML代码风格规则</a>
+                    </li>
+                    <li>
+                        <a href="./html-formatting.html">HTML代码格式规则</a>
+                    </li>
+                    <li class="active">
+                        <a href="./css-style.html">CSS代码风格规则</a>
+                    </li>
+                    <li>
+                        <a href="./css-formatting.html">CSS代码格式规则</a>
+                    </li>
+                    <li>
+                        <a href="./css-meta.html">CSS信息规则</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<header class="jumbotron subhead" id="overview">
+    <div class="container">
+        <h1>CSS代码风格规则</h1>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="span3 bs-docs-sidebar">
+            <ul class="nav nav-list bs-docs-sidenav">
+                <li><a href="#code-validity"><i class="icon-chevron-right"></i> CSS代码有效性</a></li>
+                <li><a href="#id-class"><i class="icon-chevron-right"></i> ID和class的命名</a></li>
+                <li><a href="#id-class-style"><i class="icon-chevron-right"></i> ID和class命名风格</a></li>
+                <li><a href="#type-selector"><i class="icon-chevron-right"></i> 类型选择器</a></li>
+                <li><a href="#properties"><i class="icon-chevron-right"></i> 属性缩写</a></li>
+                <li><a href="#units"><i class="icon-chevron-right"></i> 0和单位</a></li>
+                <li><a href="#decimal0"><i class="icon-chevron-right"></i> 0开头的小数</a></li>
+                <li><a href="#quotation-marks"><i class="icon-chevron-right"></i> URI外的引号</a></li>
+                <li><a href="#hex"><i class="icon-chevron-right"></i> 十六进制</a></li>
+                <li><a href="#prefix"><i class="icon-chevron-right"></i> 前缀</a></li>
+                <li><a href="#delimiter"><i class="icon-chevron-right"></i> ID和class命名的定界符</a></li>
+                <li><a href="#hacks"><i class="icon-chevron-right"></i> Hacks</a></li>
+            </ul>
+        </div>
+        <div class="span9">
+            <section id="code-validity">
+                <div class="page-header">
+                    <h1>CSS代码有效性</h1>
+                </div>
+
+                <h2>尽量使用有效的CSS代码。</h2>
+
+                <p>使用有效的CSS代码，除非是处理CSS校验器程序错误或者需要专有语法。
+
+                    用类似<a href="http://jigsaw.w3.org/css-validator/">W3C CSS validator</a> 这样的工具来进行有效性的测试。
+
+                    使用有效的CSS是重要的质量衡量标准，如果发现有的CSS代码没有任何效果的可以删除，确保CSS用法适当。</p>
+            </section>
+            <section id="id-class">
+                <div class="page-header">
+                    <h1>ID和class的命名</h1>
+                </div>
+                <h2>为ID和class取通用且有意义的名字。</h2>
+
+                <p>应该从ID和class的名字上就能看出这元素是干嘛用的，而不是表象或模糊不清的命名。
+
+                    应该优先虑以这元素具体目来进行命名，这样他就最容易理解，减少更新。
+
+                    通用名称可以加在兄弟元素都不特殊或没有个别意义的元素上，可以起名类似“helpers”这样的泛。
+
+                    使用功能性或通用的名字会减少不必要的文档或模板修改。</p>
+            <pre class="prettyprint linenums">
+/* 不推荐: 无意义 不易理解 */
+#yee-1901 {}
+
+/* 不推荐: 表达不具体 */
+.button-green {}
+.clear {}
+            </pre>
+                <pre class="prettyprint linenums">
+/* 推荐: 明确详细 */
+#gallery {}
+#login {}
+.video {}
+
+/* 推荐: 通用 */
+.aux {}
+.alt {}
+            </pre>
+            </section>
+            <section id="id-class-style">
+                <div class="page-header">
+                    <h1>ID和class命名风格</h1>
+                </div>
+                <h2>非必要的情况下，ID和class的名称应尽量简短。</h2>
+
+                <p>简要传达ID或class是关于什么的。
+
+                    通过这种方式，似的代码易懂且高效。</p>
+<pre class="prettyprint linenums">
+/* 不推荐 */
+#navigation {}
+.atr {}
+</pre>
+<pre class="prettyprint linenums">
+/* 推荐 */
+#nav {}
+.author {}
+</pre>
+            </section>
+            <section id="type-selector">
+                <div class="page-header">
+                    <h1>类型选择器</h1>
+                </div>
+                <h2>避免使用CSS类型选择器。</h2>
+
+                <p>非必要的情况下不要使用元素标签名和ID或class进行组合。
+
+                    出于性能上的考虑避免使用父辈节点做选择器 <a href="http://www.stevesouders.com/blog/2009/06/18/simplifying-css-selectors/">performance
+                        reasons</a>
+                </p>
+                <pre class="prettyprint linenums">
+/* 不推荐 */
+ul#example {}
+div.error {}
+</pre>
+<pre class="prettyprint linenums">
+/* 推荐 */
+#example {}
+.error {}
+</pre>
+            </section>
+            <section id="properties">
+                <div class="page-header">
+                    <h1>属性缩写</h1>
+                </div>
+                <h2>写属性值的时候尽量使用缩写。</h2>
+
+                <p>CSS很多属性都支持缩写<a href="http://www.w3.org/TR/CSS21/about.html#shorthand">shorthand</a> （例如 font ） 尽量使用缩写，甚至只设置一个值。使用缩写可以提高代码的效率和方便理解。
+                </p>
+                <pre class="prettyprint linenums">/* 不推荐 */
+border-top-style: none;
+font-family: palatino, georgia, serif;
+font-size: 100%;
+line-height: 1.6;
+padding-bottom: 2em;
+padding-left: 1em;
+padding-right: 1em;
+padding-top: 0;</pre>
+                <pre class="prettyprint linenums">/* 推荐 */
+border-top: 0;
+font: 100%/1.6 palatino, georgia, serif;
+padding: 0 1em 2em;</pre>
+            </section>
+            <section id="units">
+                <div class="page-header">
+                    <h1>0和单位</h1>
+                </div>
+                <h2>省略0后面的单位。</h2>
+
+                <p>非必要的情况下 0 后面不用加单位。
+                </p>
+                <pre class="prettyprint linenums">
+margin: 0;
+padding: 0;
+</pre>
+            </section>
+            <section id="decimal0">
+                <div class="page-header">
+                    <h1>0开头的小数</h1>
+                </div>
+                <h2>省略0开头小数点前面的0。</h2>
+
+                <p>值或长度在-1与1之间的小数，小数前的 0 可以忽略不写。
+                </p>
+                <pre class="prettyprint linenums">
+font-size: .8em;
+</pre>
+            </section>
+            <section id="quotation-marks">
+                <div class="page-header">
+                    <h1>URI外的引号</h1>
+                </div>
+                <h2>省略URI外的引号。</h2>
+
+                <p>
+                    不要在 url() 里用 ( "" , '' ) 。
+                </p>
+                <pre class="prettyprint linenums">
+&lt;!-- 不推荐 --&gt;
+@import url("//www.google.com/css/go.css");
+&lt;!-- 推荐 --&gt;
+@import url(//www.google.com/css/go.css);</pre>
+            </section>
+            <section id="hex">
+                <div class="page-header">
+                    <h1>十六进制</h1>
+                </div>
+                <h2>十六进制尽可能使用3个字符。</h2>
+
+                <p>
+                    加颜色值时候会用到它，使用3个字符的十六进制更短与简洁。
+                </p>
+                <pre class="prettyprint linenums">
+/* 不推荐 */
+color: #eebbcc;</pre>
+                <pre class="prettyprint linenums">
+/* 推荐 */
+color: #ebc;</pre>
+            </section>
+            <section id="prefix">
+                <div class="page-header">
+                    <h1>前缀</h1>
+                </div>
+                <h2>选择器前面加上特殊应用标识的前缀（可选）。</h2>
+
+                <p>
+                    大型项目中最好在ID或class名字前加上这种标识性前缀（命名空间），使用短破折号链接。
+
+                    使用命名空间可以防止命名冲突，方便维护，比如在搜索和替换操作上。
+                </p>
+                <pre class="prettyprint linenums">
+.adw-help {} /* AdWords */
+#maia-note {} /* Maia */</pre>
+            </section>
+            <section id="delimiter">
+                <div class="page-header">
+                    <h1>ID和class命名的定界符</h1>
+                </div>
+                <h2>ID和class名字有多单词组合的用短破折号“-”分开。</h2>
+
+                <p>
+                    别在选择器名字里用短破折号“-”以外的连接词(包括啥也没有)， 以增进对名字的理解和查找。
+                </p>
+                <pre class="prettyprint linenums">
+/* 不推荐：“demo”和“image”中间没加“-” */
+.demoimage {}
+
+/* 不推荐：用下划线“_”是屌丝的风格 */
+.error_status {}</pre>
+                <pre class="prettyprint linenums">
+/* 推荐 */
+#video-id {}
+.ads-sample {}</pre>
+            </section>
+            <section id="hacks">
+                <div class="page-header">
+                    <h1>Hacks</h1>
+                </div>
+                <h2>最好避免使用该死的CSS “hacks” —— 请先尝试使用其他的解决方法。</h2>
+
+                <p>
+                    虽然它很有诱惑力，可以当作用户代理检测或特殊的CSS过滤器，但它的行为太过于频繁，会长期伤害项目的效率和代码管理，所以能用其他的解决方案就找其他的。
+                </p>
+            </section>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <p>Kuyae <a href="http://at63.com/" target="_blank">at63.com</a></p>
+    </div>
+</footer>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap-transition.js"></script>
+<script src="assets/js/bootstrap-alert.js"></script>
+<script src="assets/js/bootstrap-modal.js"></script>
+<script src="assets/js/bootstrap-dropdown.js"></script>
+<script src="assets/js/bootstrap-scrollspy.js"></script>
+<script src="assets/js/bootstrap-tab.js"></script>
+<script src="assets/js/bootstrap-tooltip.js"></script>
+<script src="assets/js/bootstrap-popover.js"></script>
+<script src="assets/js/bootstrap-button.js"></script>
+<script src="assets/js/bootstrap-collapse.js"></script>
+<script src="assets/js/bootstrap-carousel.js"></script>
+<script src="assets/js/bootstrap-typeahead.js"></script>
+<script src="assets/js/bootstrap-affix.js"></script>
+<script src="assets/js/holder/holder.js"></script>
+<script src="assets/js/google-code-prettify/prettify.js"></script>
+<script src="assets/js/application.js"></script>
+</body>
+</html>

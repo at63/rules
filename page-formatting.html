@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>排版规则 - @路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button> 
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li>
+                        <a href="./index.html">主页</a>
+                    </li>
+                    <li>
+                        <a href="./page-style.html">样式规则</a>
+                    </li>
+                    <li class="active">
+                        <a href="./page-formatting.html">排版规则</a>
+                    </li>
+                    <li>
+                        <a href="./page-meta.html">页面信息规则</a>
+                    </li>
+                    <li>
+                        <a href="./html-style.html">HTML代码风格规则</a>
+                    </li>
+                    <li>
+                        <a href="./html-formatting.html">HTML代码格式规则</a>
+                    </li>
+                    <li>
+                        <a href="./css-style.html">CSS代码风格规则</a>
+                    </li>
+                    <li>
+                        <a href="./css-formatting.html">CSS代码格式规则</a>
+                    </li>
+                    <li>
+                        <a href="./css-meta.html">CSS信息规则</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<header class="jumbotron subhead" id="overview">
+    <div class="container">
+        <h1>排版规则</h1>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="span3 bs-docs-sidebar">
+            <ul class="nav nav-list bs-docs-sidenav">
+                <li><a href="#Indentation"><i class="icon-chevron-right"></i> 缩进</a></li>
+                <li><a href="#Case"><i class="icon-chevron-right"></i> 大小写</a></li>
+                <li><a href="#Trailing-spaces"><i class="icon-chevron-right"></i> 行尾空格</a></li>
+            </ul>
+        </div>
+        <div class="span9">
+            <section id="Indentation">
+            <div class="page-header">
+                <h1>缩进</h1>
+            </div>
+
+            <h2>每次缩进两个空格。</h2>
+
+            <p>不要用TAB键或多个空格来进行缩进。</p>
+                <pre class="prettyprint linenums">
+&lt;ul&gt;
+  &lt;li&gt;Fantastic
+  &lt;li&gt;Great
+&lt;/ul&gt;
+</pre>
+ <pre class="prettyprint linenums">
+.example {
+  color: blue;
+}
+</pre>
+        </section>
+            <section id="Case">
+                <div class="page-header">
+                    <h1>大小写</h1>
+                </div>
+
+                <h2>只用小写字母。</h2>
+
+                <p>所有的代码都用小写字母：适用于元素名，属性，属性值（除了文本和 CDATA ）， 选择器，特性，特性值（除了字符串）。</p>
+                <pre class="prettyprint linenums">
+&lt;!-- 不推荐 --&gt;
+&lt;A HREF="/"&gt;Home&lt;/A&gt;
+</pre>
+ <pre class="prettyprint linenums">
+&lt;!-- 推荐 --&gt;
+&lt;img src="google.png" alt="Google"&gt;
+</pre>
+            </section>
+            <section id="Trailing-spaces">
+                <div class="page-header">
+                    <h1>行尾空格</h1>
+                </div>
+
+                <h2>删除行尾白空格。</h2>
+
+                <p>行尾空格没必要存在。</p>
+                <pre class="prettyprint linenums">
+&lt;!-- 不推荐 --&gt;
+&lt;p&gt;What?_
+</pre>
+ <pre class="prettyprint linenums">
+&lt;!-- 推荐 --&gt;
+&lt;p&gt;Yes please.
+</pre>
+            </section>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <p>Kuyae <a href="http://at63.com/" target="_blank">at63.com</a></p>
+    </div>
+</footer>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap-transition.js"></script>
+<script src="assets/js/bootstrap-alert.js"></script>
+<script src="assets/js/bootstrap-modal.js"></script>
+<script src="assets/js/bootstrap-dropdown.js"></script>
+<script src="assets/js/bootstrap-scrollspy.js"></script>
+<script src="assets/js/bootstrap-tab.js"></script>
+<script src="assets/js/bootstrap-tooltip.js"></script>
+<script src="assets/js/bootstrap-popover.js"></script>
+<script src="assets/js/bootstrap-button.js"></script>
+<script src="assets/js/bootstrap-collapse.js"></script>
+<script src="assets/js/bootstrap-carousel.js"></script>
+<script src="assets/js/bootstrap-typeahead.js"></script>
+<script src="assets/js/bootstrap-affix.js"></script>
+<script src="assets/js/holder/holder.js"></script>
+<script src="assets/js/google-code-prettify/prettify.js"></script>
+<script src="assets/js/application.js"></script>
+</body>
+</html>

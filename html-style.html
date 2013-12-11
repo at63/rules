@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>HTML代码风格规则 - @路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li>
+                        <a href="./index.html">主页</a>
+                    </li>
+                    <li>
+                        <a href="./page-style.html">样式规则</a>
+                    </li>
+                    <li>
+                        <a href="./page-formatting.html">排版规则</a>
+                    </li>
+                    <li>
+                        <a href="./page-meta.html">页面信息规则</a>
+                    </li>
+                    <li class="active">
+                        <a href="./html-style.html">HTML代码风格规则</a>
+                    </li>
+                    <li>
+                        <a href="./html-formatting.html">HTML代码格式规则</a>
+                    </li>
+                    <li>
+                        <a href="./css-style.html">CSS代码风格规则</a>
+                    </li>
+                    <li>
+                        <a href="./css-formatting.html">CSS代码格式规则</a>
+                    </li>
+                    <li>
+                        <a href="./css-meta.html">CSS信息规则</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<header class="jumbotron subhead" id="overview">
+    <div class="container">
+        <h1>HTML代码风格规则</h1>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="span3 bs-docs-sidebar">
+            <ul class="nav nav-list bs-docs-sidenav">
+                <li><a href="#document-type"><i class="icon-chevron-right"></i> 文档类型</a></li>
+                <li><a href="#comments"><i class="icon-chevron-right"></i> HTML代码有效性</a></li>
+                <li><a href="#todo"><i class="icon-chevron-right"></i> 语义</a></li>
+                <li><a href="#multimedia"><i class="icon-chevron-right"></i> 多媒体后备方案</a></li>
+                <li><a href="#concerns"><i class="icon-chevron-right"></i> 关注点分离</a></li>
+                <li><a href="#substance"><i class="icon-chevron-right"></i> 实体引用</a></li>
+                <li><a href="#optional-label"><i class="icon-chevron-right"></i> 可选标签</a></li>
+                <li><a href="#type-attribute"><i class="icon-chevron-right"></i> type属性</a></li>
+            </ul>
+        </div>
+        <div class="span9">
+            <section id="document-type">
+                <div class="page-header">
+                    <h1>文档类型</h1>
+                </div>
+
+                <h2>使用HTML5</h2>
+
+                <p>HTML5为所有HTML文档(HTML语法)优先: < ! DOCTYPE html > 。
+
+                    (推荐使用<span class="text-blue">HTML text / html</span> 。 不使用 XHTML。 <span
+                            class="text-blue">XHTML</span>即：<span class="text-blue">application / xhtml + xml</span> ,
+                    有俩浏览器完全不支持，还比HTML占用更多的存储空间。)</p>
+            </section>
+            <section id="comments">
+                <div class="page-header">
+                    <h1>HTML代码有效性</h1>
+                </div>
+                <h2>尽量使用有效的HTML代码。</h2>
+
+                <p>编写有效的HTML代码，否则很难达到性能上的提升。
+
+                    用类似这样的工具 <a href="://validator.w3.org/">W3C HTML validator</a> 来进行测试。
+
+                    HTML代码有效性是重要的质量衡量标准，并可确保HTML代码可以正确使用。</p>
+            <pre class="prettyprint linenums">
+/* 不推荐 */
+&lt;title&gt;Test&lt;/title&gt;<br>&lt;article&gt;This is only a test.
+/* 推荐 */
+&lt;!DOCTYPE html&gt;<br>&lt;meta charset=&quot;utf-8&quot;&gt;<br>&lt;title&gt;Test&lt;/title&gt;<br>&lt;article&gt;This is only a test.&lt;/article&gt;
+            </pre>
+            </section>
+            <section id="todo">
+                <div class="page-header">
+                    <h1>语义</h1>
+                </div>
+                <h2>根据HTML各个元素的用途而去使用它们</h2>
+
+                <p>使用元素 (有时候错称其为“标签”) 要知道为什么去使用它们和是否正确。<br/>例如，用heading元素构造标题， p 元素构造段落, a 元素构造锚点等。</p>
+<pre class="prettyprint linenums">
+&lt;!-- 不推荐 --&gt;
+&lt;div onclick="goToRecommendations();"&gt;All recommendations&lt;/div&gt;
+&lt;!-- 推荐 --&gt;
+&lt;a href="recommendations/"&gt;All recommendations&lt;/a&gt;
+</pre>
+            </section>
+            <section id="multimedia">
+                <div class="page-header">
+                    <h1>多媒体后备方案</h1>
+                </div>
+                <h2>为多媒体提供备选内容</h2>
+
+                <p>对于多媒体，如图像，视频，通过 <span class="text-blue">canvas</span> 读取的动画元素，确保提供备选方案。 对于图像使用有意义的备选文案<span
+                        class="text-blue">（ alt ）</span> 对于视频和音频使用有效的副本和文案说明。提供备选内容是很重要的，原因：给盲人用户以一些提示性的文字，用<span
+                        class="text-blue"> @alt</span>告诉他这图像是关于什么的，给可能没理解视频或音频的内容的用户以提示。（图像的 alt
+                    属性会产生冗余，如果使用图像只是为了不能立即用CSS而装饰的 ，就不需要用备选文案了，可以写<span class="text-blue">alt="" </span>。）
+                </p>
+                <pre class="prettyprint linenums">
+&lt;!-- 不推荐 --&gt;
+&lt;img src="spreadsheet.png"&gt;
+&lt;!-- 推荐 --&gt;
+&lt;img src="spreadsheet.png" alt="大学申请截图"&gt;
+</pre>
+            </section>
+            <section id="concerns">
+                <div class="page-header">
+                    <h1>关注点分离。</h1>
+                </div>
+                <h2>将表现和行为分开</h2>
+
+                <p>严格保持结构 （标记），表现 （样式），和行为 （脚本）分离, 并尽量让这三者之间的交互保持最低限度。
+
+                    确保文档和模板只包含HTML结构， 把所有表现都放到样式表里，把所有行为都放到脚本里。
+
+                    此外，尽量使脚本和样式表在文档与模板中有最小接触面积，即减少外链。
+
+                    将表现和行为分开维护是很重要滴，因为更改HTML文档结构和模板会比更新样式表和脚本更花费成本。
+                </p>
+                <pre class="prettyprint linenums">&lt;!-- 不推荐 --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;title&gt;HTML sucks&lt;/title&gt;
+&lt;link rel="stylesheet" href="base.css" media="screen"&gt;
+&lt;link rel="stylesheet" href="grid.css" media="screen"&gt;
+&lt;link rel="stylesheet" href="print.css" media="print"&gt;
+&lt;h1 style="font-size: 1em;"&gt;HTML sucks&lt;/h1&gt;
+&lt;p&gt;I’ve read about this on a few sites but now I’m sure:
+  &lt;u&gt;HTML is stupid!!1&lt;/u&gt;
+&lt;center&gt;I can’t believe there’s no way to control the styling of
+  my website without doing everything all over again!&lt;/center&gt;</pre>
+                <pre class="prettyprint linenums">&lt;!-- 推荐 --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;title&gt;My first CSS-only redesign&lt;/title&gt;
+&lt;link rel="stylesheet" href="default.css"&gt;
+&lt;h1&gt;My first CSS-only redesign&lt;/h1&gt;
+&lt;p&gt;I’ve read about this on a few sites but today I’m actually
+  doing it: separating concerns and avoiding anything in the HTML of
+  my website that is presentational.
+&lt;p&gt;It’s awesome!</pre>
+            </section>
+            <section id="substance">
+                <div class="page-header">
+                    <h1>实体引用</h1>
+                </div>
+                <h2>不要用实体引用。</h2>
+
+                <p>不需要使用类似<span class="text-blue"> &mdash;</span> 、 <span class="text-blue">&rdquo;</span> 和 <span
+                        class="text-blue">&#x263a</span>; 等的实体引用, 假定团队之间所用的文件和编辑器是同一编码（UTF-8）。在HTML文档中具有特殊含义的字符（例如 <span
+                        class="text-blue"> < </span>和<span class="text-blue"> & </span> )为例外，噢对了，还有 “不可见” 字符
+                    （例如no-break空格）。
+                </p>
+                <pre class="prettyprint linenums">
+&lt;!-- 不推荐 --&gt;
+欧元货币符号是 &ldquo;&eur;&rdquo;
+                    &lt;!-- 推荐 --&gt;
+欧元货币符号是 “€”。
+</pre>
+            </section>
+            <section id="optional-label">
+                <div class="page-header">
+                    <h1>可选标签</h1>
+                </div>
+                <h2>省略可选标签（可选）。</h2>
+
+                <p>出于优化文件大小和校验， 可以考虑省略可选标签，哪些是可选标签可以参考<a
+                        href="http://www.whatwg.org/specs/web-apps/current-work/multipage/syntax.html#syntax-tag-omission">
+                    HTML5 specification </a>（这种方法可能需要更精准的规范来制定，众多的开发者对此的观点也都不同。考虑到一致性和简洁的原因，省略所有可选标记是有必要的。）
+                </p>
+                <pre class="prettyprint linenums">
+&lt;!-- 不推荐 --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Spending money, spending bytes&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;Sic.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+                <pre class="prettyprint linenums">&lt;!-- 推荐 --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;title&gt;Saving money, saving bytes&lt;/title&gt;
+&lt;p&gt;Qed.</pre>
+            </section>
+            <section id="type-attribute">
+                <div class="page-header">
+                    <h1>type属性</h1>
+                </div>
+                <h2>在样式表和脚本的标签中忽略 type 属性</h2>
+
+                <p>
+                    在样式表（除非不用 CSS）和脚本（除非不用 JavaScript）的标签中 不写 type 属性。
+                    HTML5默认<span class="text-blue"> type </span>为<span class="text-blue"> text/css </span>和<span
+                        class="text-blue">text/javascript </span>类型，所以没必要指定。即便是老浏览器也是支持的。
+                </p>
+                <pre class="prettyprint linenums">
+&lt;!-- 不推荐 --&gt;
+&lt;link rel="stylesheet" href="//www.google.com/css/maia.css"
+  type="text/css"&gt;
+</pre>
+                <pre class="prettyprint linenums">&lt;!-- 推荐 --&gt;
+&lt;link rel="stylesheet" href="//www.google.com/css/maia.css"&gt;</pre>
+                <pre class="prettyprint linenums">&lt;!-- 不推荐 --&gt;
+&lt;script src="//www.google.com/js/gweb/analytics/autotrack.js"
+  type="text/javascript"&gt;&lt;/script&gt;</pre>
+                <pre class="prettyprint linenums">&lt;!-- 推荐 --&gt;
+&lt;script src="//www.google.com/js/gweb/analytics/autotrack.js"&gt;&lt;/script&gt;</pre>
+            </section>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <p>Kuyae <a href="http://at63.com/" target="_blank">at63.com</a></p>
+    </div>
+</footer>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap-transition.js"></script>
+<script src="assets/js/bootstrap-alert.js"></script>
+<script src="assets/js/bootstrap-modal.js"></script>
+<script src="assets/js/bootstrap-dropdown.js"></script>
+<script src="assets/js/bootstrap-scrollspy.js"></script>
+<script src="assets/js/bootstrap-tab.js"></script>
+<script src="assets/js/bootstrap-tooltip.js"></script>
+<script src="assets/js/bootstrap-popover.js"></script>
+<script src="assets/js/bootstrap-button.js"></script>
+<script src="assets/js/bootstrap-collapse.js"></script>
+<script src="assets/js/bootstrap-carousel.js"></script>
+<script src="assets/js/bootstrap-typeahead.js"></script>
+<script src="assets/js/bootstrap-affix.js"></script>
+<script src="assets/js/holder/holder.js"></script>
+<script src="assets/js/google-code-prettify/prettify.js"></script>
+<script src="assets/js/application.js"></script>
+</body>
+</html>
